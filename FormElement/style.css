@@ -1,0 +1,34 @@
+div {
+    border: 1px solid black;
+    min-height: 50px;
+}
+
+.outer {
+    position: relative;
+}
+
+.inner {
+    position: absolute;
+    top: 0;
+}
+
+.one {
+    background-color: #bdffee;
+    position: absolute;
+    left: 0px;
+    right: 90%;
+    top: 50%;
+    bottom: 40%;
+}
+
+.two {
+    background-color: #994eaa;
+}
+
+.three {
+    background-color: aqua;
+}
+
+.four {
+    background-color: rgb(119, 119, 205);
+}

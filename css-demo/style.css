@@ -1,0 +1,147 @@
+
+/* selectors: */
+/* connected symbols: must match all eg:div#root.active
+   space connected symbols: descendants eg div .wrong
+*/
+body {
+    background-color: papayawhip;
+}
+.important {
+    /* !important cannot be overused, should be only used when import others library */
+    /* the importance: !important>Inline CSS>id>class>element */
+    color:blue !important;
+}
+/* for  different types of tag*/
+p {
+    color: green;
+}
+/* later command would update the value */
+p {
+    color:hotpink
+}
+.urgent {
+    color:red;
+}
+
+/* for id */
+#demo {
+    color: brown;
+    border: 1px solid black;
+}
+
+/* for all classes */
+.wrong {
+    color: red;
+}
+
+/* this is for all descendants */
+p .wrong {
+    color: rebeccapurple;
+}
+
+/* this is for direct children */
+p > .wrong {    
+    color:aquamarine;
+}
+
+/* id combined, use classes for lower levels */
+#combo .innercontent {
+    color:#ff1199;
+}
+
+div {
+    font-size: 1.5em;
+}
+
+div .rem {
+    font-size: 1.5rem;
+}
+
+/**
+css variables:
+    assign: 
+        local-class: 
+            .class-name {
+                --variable-name: variable-value;
+            }
+        global: 
+            :root {
+                --variable-name: variable-value;
+            }
+*/
+
+/**
+pseudo class: as soon as a pseudo class is matched, then the inner css statements apply
+    :hover
+    :nth-child(2n+1)
+
+*/
+div:hover {
+    border:10px solid ;
+}
+
+:focus {
+    background-color: cyan;
+    scale:1 1.5;
+}
+/* combined ol and li element*/
+ol li:nth-child(2n+1) {
+    background-color: gray;
+}
+ol li:nth-child(2n) {
+    background-color: white;
+}
+
+/**
+pseudo element: used to specify a abstract part
+    ::before
+    ::after
+    ::first-letter
+    ::first-line
+*/
+#unorderlist li:nth-child(3)::before {
+    content:"test";
+    color:#ff1199;
+}
+/* * all elements */
+/* *::after {
+    content:"next";
+} */
+
+/* css properties */
+p {
+    font-family: cursive;
+    font-style: italic;
+    visibility: visible;
+}
+
+/* css functions 
+    calc()
+    max() min()
+    clamp()    
+*/
+
+/* Media Queries */
+@media (min-width: 1000px) {
+    body {
+        background-color: yellow;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .my-element {
+        animation: flashy-zoom-in-out 1s;
+    }
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.menu > li {
+    display:inline-block;
+}
+a:hover {
+    background-color: orchid;
+}

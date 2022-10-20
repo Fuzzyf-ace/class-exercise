@@ -1,0 +1,78 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/* mobile first design
+easier to expand than collapse
+encourages clear designs
+avoid "undoing" a lot of CSS
+
+*/
+html, body {
+    height: 100%;
+    margin: 0;
+
+    background-color: papayawhip;
+    
+    font-family: sans-serif;
+}
+
+.header {
+    grid-area: header;
+    display:flex;
+    flex-direction: row;
+    background-color: dodgerblue;
+    
+}
+.header__logo {
+    aspect-ratio: 1/1;
+    width: 50px;
+    align-self: flex-start;
+}
+.header__tittle {
+    margin: 0;
+    
+    /* align-items: center; */
+}
+.globalnav {
+    grid-area: globalnav;
+    background-color: peachpuff;
+}
+.globalnav__menu {
+    list-style: none;
+    margin:0;
+    padding: 0;
+
+}
+.localnav {
+    grid-area: localnav;
+}
+.main {
+    grid-area: main;
+}
+.footer {
+    grid-area: footer;
+}
+@media screen and (min-width: 40rem) {
+    .globalnav__menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+
+@media screen and (min-width: 60rem) {
+    #root {
+        display: grid;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-columns: 25% 1fr;
+        grid-template-areas: 
+        "header header"
+        "globalnav globalnav"
+        "localnav main"
+        "footer footer";
+        height: 100%;
+    }
+    .footer {
+        background-color: dodgerblue;
+    }
+}
